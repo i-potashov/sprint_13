@@ -1,0 +1,32 @@
+{
+  "name": "sprint_13",
+  "version": "0.0.1",
+  "description": "Training project - sprint_13 Configuring the server in a Node.js vs express.js & MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "eslint": "eslint .",
+    "eslintfix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i-potashov/sprint_12.git"
+  },
+  "author": "I.Potashov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/i-potashov/sprint_12/issues"
+  },
+  "homepage": "https://github.com/i-potashov/sprint_12#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
