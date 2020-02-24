@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/i-potashov/sprint_12.git"
+    "url": "git+https://github.com/i-potashov/sprint_13.git"
   },
   "author": "I.Potashov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/i-potashov/sprint_12/issues"
+    "url": "https://github.com/i-potashov/sprint_13/issues"
   },
-  "homepage": "https://github.com/i-potashov/sprint_12#readme",
+  "homepage": "https://github.com/i-potashov/sprint_13#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -27,6 +27,9 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "celebrate": "^11.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.1",
+    "validator": "^12.2.0"
   }
 }

@@ -1,16 +1,33 @@
 const express = require('express');
-
-const app = express();
-const path = require('path');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const { errors } = require('celebrate');
 const routes = require('./routes');
-
-const { PORT: PORT_DEV } = require('./config');
+const { DB, PORT: PORT_DEV } = require('./configuration/config');
 
 const { PORT = PORT_DEV } = process.env;
+const { errorHandler } = require('./middlewares/errorHandler');
 
-app.use(express.static(path.join(__dirname, 'public')));
+const app = express();
+app.use(bodyParser.json());
+
+mongoose.connect(DB, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
+app.use((req, res, next) => {
+  req.user = {
+    _id: '5e4ee316ed85393ad6a80cb9',
+  };
+  next();
+});
 app.use(routes);
+// Обработчик ошибок celebrate
+app.use(errors());
 
+// Централизованный обработчик ошибок
+app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
