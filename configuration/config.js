@@ -1,5 +1,5 @@
 const DB = 'mongodb://localhost:27017/mestodb';
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 module.exports = {
   DB,

@@ -1,5 +1,4 @@
 const Card = require('../models/card');
-const BadRequestError = require('../errors/BadRequest');
 const NotFoundError = require('../errors/NotFoundError');
 const { ITEM_NOT_FOUND } = require('../configuration/constants');
 
@@ -14,21 +13,15 @@ module.exports.createCard = (req, res, next) => {
   const owner = req.user._id;
   Card.create({ name, link, owner })
     .then((card) => res.status(201).send({ data: card }))
-    .catch((e) => {
-      next(new BadRequestError(e.message));
-    });
+    .catch(next);
 };
 
 module.exports.deleteCard = (req, res, next) => {
   const { cardId } = req.params;
-  Card.findOne({ _id: cardId })
-    .orFail(() => {
-      throw new NotFoundError(ITEM_NOT_FOUND);
-    })
-    .then(() => {
-      Card.findByIdAndRemove(cardId)
-        .then((card) => res.status(200).send({ data: card }))
-        .catch(next);
+  Card.findById({ _id: cardId })
+    .then((card) => {
+      if (!card) return next(new NotFoundError(ITEM_NOT_FOUND));
+      return Card.remove(card).then(() => res.status(200).send({ data: card }));
     })
     .catch(next);
 };

@@ -3,9 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
 const routes = require('./routes');
-const { DB, PORT: PORT_DEV } = require('./configuration/config');
-
-const { PORT = PORT_DEV } = process.env;
+const { DB, PORT } = require('./configuration/config');
 const { errorHandler } = require('./middlewares/errorHandler');
 
 const app = express();
