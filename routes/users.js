@@ -6,7 +6,7 @@ const {
   getUsers,
 } = require('../controllers/users');
 
-users.get('/users/:userId', userRequestCheck, getUser);
+users.get('/users/:userId', getUser);
 users.post('/users', userRequestCheck, createUser);
 users.get('/users', getUsers);
 
