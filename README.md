@@ -1,5 +1,5 @@
 # Project №13 "Yandex_praktikum"
-**v 0.0.1**
+**v 0.0.2**
 Configuring the server in a Node.js express.js & MongoDB
 
 ### Getting started
@@ -27,14 +27,14 @@ $ npm run eslintfix
 **After starting the server, you can try these queries:**
 
 ```sh
-localhost:3000
-localhost:3000/users
-localhost:3000/cards
-localhost:3000/users/8340d0ec33270a25f2413b69
+GET /users
+GET /users/:userId
+POST /users
+GET /cards
+POST /cards
 ```
 ### Todos
 
- - Change the directory structure for the MVC architecture
  - Add automated testing
  
 ### License
