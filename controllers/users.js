@@ -1,5 +1,4 @@
 const User = require('../models/user');
-const BadRequestError = require('../errors/BadRequest');
 
 module.exports.getUser = (req, res, next) => {
   User.findById(req.params.userId)
@@ -17,7 +16,5 @@ module.exports.createUser = (req, res, next) => {
   const { name, about, avatar } = req.body;
   User.create({ name, about, avatar })
     .then((user) => res.status(201).send({ data: user }))
-    .catch((e) => {
-      next(new BadRequestError(e.message));
-    });
+    .catch(next);
 };
