@@ -1,5 +1,5 @@
 # Project №13 "Yandex_praktikum"
-**v 0.0.2**
+**v 0.1.0**
 Configuring the server in a Node.js express.js & MongoDB
 
 ### Getting started
