@@ -1,7 +1,8 @@
 # Project №13 "Yandex_praktikum"
 **v 0.1.0**
 Configuring the server in a Node.js express.js & MongoDB
-Modules: 
+
+**Modules:**
 ```sh
 "body-parser", "celebrate", "express", "joi-objectid", 
 "mongoose", "validator", "eslint", "eslint-config-airbnb-base", 
