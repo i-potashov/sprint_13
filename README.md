@@ -1,7 +1,12 @@
 # Project №13 "Yandex_praktikum"
 **v 0.1.0**
 Configuring the server in a Node.js express.js & MongoDB
-
+Modules: 
+```sh
+"body-parser", "celebrate", "express", "joi-objectid", 
+"mongoose", "validator", "eslint", "eslint-config-airbnb-base", 
+"eslint-plugin-import", "nodemon"
+```
 ### Getting started
 
 The sprint_13 was created on the [Node.js](https://nodejs.org/) v12+.
